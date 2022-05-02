@@ -32,6 +32,10 @@ strong {
     font-size: 2.5rem;
     line-height: 4rem;
 }
+.hero__text {
+    font-size: 2rem;
+    line-height: 3rem; 
+}
 
 .hero__social {
     display: flex;
@@ -63,4 +67,14 @@ nav {
 .social-icon {
     width:50px;
     color:var(--dark);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: var(--dark)
 }
