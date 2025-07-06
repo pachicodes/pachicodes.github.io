@@ -1,0 +1,510 @@
+/* 
+🥑 ABACATE HACKER STYLE GUIDE
+Design System por @pachicodes
+Versão: 1.0
+*/
+
+/* ========================================
+   VARIÁVEIS PRINCIPAIS
+======================================== */
+
+:root {
+    /* Cores Base - Abacate */
+    --abacate-light: #c9ffc9;      /* Verde Abacate Claro */
+    --abacate-dark: #011B10;       /* Verde Abacate Escuro */
+    --abacate-accent: #1ad527;     /* Verde Vibrante */
+    
+    /* Cores Hacker Neon */
+    --hacker-neon: #39FF14;        /* Verde Neon (terminal) */
+    --hacker-black: #111111;       /* Preto Profundo */
+    
+    /* Neutros */
+    --neutral-light: #F0F0F0;      /* Cinza Claro */
+    --neutral-dark: #404040;       /* Cinza Escuro */
+    --neutral-near-black: #1f1f1f; /* Quase Preto */
+    --neutral-near-white: #d0d0d0; /* Quase Branco */
+    
+    /* Espaçamentos */
+    --space-xs: 0.25rem;    /* 4px */
+    --space-sm: 0.5rem;     /* 8px */
+    --space-md: 1rem;       /* 16px */
+    --space-lg: 1.5rem;     /* 24px */
+    --space-xl: 2rem;       /* 32px */
+    --space-xxl: 3rem;      /* 48px */
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-round: 50%;
+    
+    /* Transições */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.6s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(26, 213, 39, 0.1);
+    --shadow-md: 0 4px 12px rgba(26, 213, 39, 0.15);
+    --shadow-lg: 0 8px 24px rgba(26, 213, 39, 0.2);
+    
+    /* Typography */
+    --font-family: 'Roboto Mono', monospace;
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 2rem;     /* 32px */
+    --font-size-4xl: 2.5rem;   /* 40px */
+}
+
+/* ========================================
+   MODO ESCURO
+======================================== */
+
+body[data-theme="dark"] {
+    --abacate-light: var(--hacker-black);
+    --abacate-dark: var(--neutral-near-white);
+    --abacate-accent: var(--hacker-neon);
+    --shadow-sm: 0 2px 4px rgba(57, 255, 20, 0.1);
+    --shadow-md: 0 4px 12px rgba(57, 255, 20, 0.15);
+    --shadow-lg: 0 8px 24px rgba(57, 255, 20, 0.2);
+}
+
+/* ========================================
+   RESET E BASE
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--abacate-light);
+    color: var(--abacate-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   TIPOGRAFIA
+======================================== */
+
+.abacate-h1 {
+    font-size: var(--font-size-4xl);
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 0 0 var(--space-lg) 0;
+}
+
+.abacate-h2 {
+    font-size: var(--font-size-3xl);
+    line-height: 1.3;
+    font-weight: 400;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.abacate-h3 {
+    font-size: var(--font-size-2xl);
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.abacate-body {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.abacate-small {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn-abacate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--abacate-accent);
+    color: var(--abacate-accent);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    min-height: 44px; /* Acessibilidade - área de toque mínima */
+}
+
+.btn-abacate:hover,
+.btn-abacate:focus {
+    background-color: var(--abacate-accent);
+    color: var(--abacate-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-abacate:focus {
+    outline: 2px solid var(--abacate-accent);
+    outline-offset: 2px;
+}
+
+.btn-abacate:active {
+    transform: translateY(0);
+}
+
+/* Variações de botão */
+.btn-abacate--small {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+    min-height: 36px;
+}
+
+.btn-abacate--large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-lg);
+    min-height: 52px;
+}
+
+/* ========================================
+   TOGGLE DARK MODE
+======================================== */
+
+.abacate-toggle {
+    background: none;
+    border: 2px solid var(--abacate-accent);
+    border-radius: var(--radius-round);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    transition: all var(--transition-normal);
+    background-color: var(--abacate-light);
+    color: var(--abacate-dark);
+}
+
+.abacate-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--abacate-accent);
+    color: var(--abacate-light);
+}
+
+.abacate-toggle:focus {
+    outline: 2px solid var(--abacate-accent);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   CARDS
+======================================== */
+
+.abacate-card {
+    background: var(--abacate-light);
+    border: 2px solid var(--abacate-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.abacate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.abacate-card--compact {
+    padding: var(--space-md);
+}
+
+.abacate-card--spacious {
+    padding: var(--space-xxl);
+}
+
+/* ========================================
+   LINKS
+======================================== */
+
+.abacate-link {
+    color: var(--abacate-accent);
+    text-decoration: none;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.abacate-link:hover,
+.abacate-link:focus {
+    color: var(--abacate-accent);
+}
+
+.abacate-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--abacate-accent);
+    transition: width var(--transition-normal);
+}
+
+.abacate-link:hover::after,
+.abacate-link:focus::after {
+    width: 100%;
+}
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+.abacate-input {
+    background: var(--abacate-light);
+    border: 2px solid var(--neutral-dark);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--abacate-dark);
+    transition: all var(--transition-normal);
+    min-height: 44px;
+}
+
+.abacate-input:focus {
+    outline: none;
+    border-color: var(--abacate-accent);
+    box-shadow: 0 0 0 3px rgba(26, 213, 39, 0.1);
+}
+
+.abacate-input::placeholder {
+    color: var(--neutral-dark);
+    opacity: 0.7;
+}
+
+/* ========================================
+   UTILITÁRIOS
+======================================== */
+
+.abacate-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.abacate-flex {
+    display: flex;
+}
+
+.abacate-flex--center {
+    align-items: center;
+    justify-content: center;
+}
+
+.abacate-flex--between {
+    justify-content: space-between;
+}
+
+.abacate-flex--column {
+    flex-direction: column;
+}
+
+.abacate-grid {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.abacate-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.abacate-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Espaçamentos */
+.abacate-m-0 { margin: 0; }
+.abacate-m-sm { margin: var(--space-sm); }
+.abacate-m-md { margin: var(--space-md); }
+.abacate-m-lg { margin: var(--space-lg); }
+
+.abacate-p-0 { padding: 0; }
+.abacate-p-sm { padding: var(--space-sm); }
+.abacate-p-md { padding: var(--space-md); }
+.abacate-p-lg { padding: var(--space-lg); }
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+@keyframes abacateFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.abacate-fade-in {
+    animation: abacateFadeIn 0.6s ease-out;
+}
+
+@keyframes abacatePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(26, 213, 39, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(26, 213, 39, 0);
+    }
+}
+
+.abacate-pulse {
+    animation: abacatePulse 2s infinite;
+}
+
+@keyframes abacateGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--abacate-accent);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--abacate-accent);
+    }
+}
+
+.abacate-glow {
+    animation: abacateGlow 2s ease-in-out infinite;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+    .abacate-h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .abacate-h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .abacate-grid--2,
+    .abacate-grid--3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .abacate-container {
+        padding: 0 var(--space-sm);
+    }
+}
+
+@media (min-width: 1024px) {
+    .abacate-h1 {
+        font-size: 4rem;
+    }
+    
+    .abacate-h2 {
+        font-size: 3rem;
+    }
+}
+
+/* ========================================
+   COMPONENTES ESPECIAIS
+======================================== */
+
+/* Badge/Tag */
+.abacate-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--abacate-accent);
+    color: var(--abacate-light);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+/* Loading spinner */
+.abacate-spinner {
+    border: 3px solid var(--neutral-light);
+    border-top: 3px solid var(--abacate-accent);
+    border-radius: var(--radius-round);
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Highlight text */
+.abacate-highlight {
+    background-color: var(--abacate-accent);
+    color: var(--abacate-light);
+    padding: 0 var(--space-xs);
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+/* Reduzir movimento para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --abacate-light: #ffffff;
+        --abacate-dark: #000000;
+        --abacate-accent: #008000;
+        --hacker-neon: #00ff00;
+    }
+}
+
+/* Focus visível para navegação por teclado */
+.abacate-focusable:focus-visible {
+    outline: 2px solid var(--abacate-accent);
+    outline-offset: 2px;
+}
+
+/* Screen reader only */
+.abacate-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
