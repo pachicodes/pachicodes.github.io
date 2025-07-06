@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacate Hacker - Style Guide Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="abacate-hacker.css">
+</head>
+<body>
+    <div class="abacate-container">
+        <!-- Header com Toggle -->
+        <header class="abacate-flex abacate-flex--between abacate-p-md">
+            <h1 class="abacate-h2 abacate-m-0">🥑 Abacate Hacker</h1>
+            <button class="abacate-toggle" id="theme-toggle" aria-label="Alternar modo escuro">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="abacate-p-lg">
+            <h1 class="abacate-h1 abacate-fade-in">
+                Style Guide <span class="abacate-highlight">Abacate Hacker</span>
+            </h1>
+            <p class="abacate-body">
+                Um sistema de design que combina a energia hacker com a naturalidade do crescimento orgânico.
+                Criado para comunidades de tecnologia que valorizam <a href="#" class="abacate-link">acessibilidade</a> 
+                e <a href="#" class="abacate-link">funcionalidade</a>.
+            </p>
+        </section>
+
+        <!-- Botões Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Botões</h2>
+            <div class="abacate-flex" style="gap: 1rem; flex-wrap: wrap;">
+                <button class="btn-abacate">Botão Normal</button>
+                <button class="btn-abacate btn-abacate--small">Pequeno</button>
+                <button class="btn-abacate btn-abacate--large">Grande</button>
+                <a href="#" class="btn-abacate">Link como Botão</a>
+            </div>
+        </section>
+
+        <!-- Cards Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Cards</h2>
+            <div class="abacate-grid abacate-grid--3">
+                <div class="abacate-card">
+                    <h3 class="abacate-h3">🚀 Funcionalidade</h3>
+                    <p class="abacate-body">
+                        Cada elemento tem um propósito claro e definido.
+                    </p>
+                    <span class="abacate-badge">#design</span>
+                </div>
+                
+                <div class="abacate-card">
+                    <h3 class="abacate-h3">🌱 Crescimento</h3>
+                    <p class="abacate-body">
+                        Projetos que evoluem naturalmente como comunidades.
+                    </p>
+                    <span class="abacate-badge">#comunidade</span>
+                </div>
+                
+                <div class="abacate-card abacate-pulse">
+                    <h3 class="abacate-h3">⚡ Energia</h3>
+                    <p class="abacate-body">
+                        Cores vibrantes que motivam e inspiram criação.
+                    </p>
+                    <span class="abacate-badge">#inspiração</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipografia Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Tipografia</h2>
+            <div class="abacate-card">
+                <h1 class="abacate-h1">Heading 1 - Título Principal</h1>
+                <h2 class="abacate-h2">Heading 2 - Subtítulo</h2>
+                <h3 class="abacate-h3">Heading 3 - Seção</h3>
+                <p class="abacate-body">
+                    Este é um parágrafo de exemplo mostrando a tipografia base do sistema.
+                    A fonte <strong>Roboto Mono</strong> foi escolhida por sua legibilidade
+                    e conexão com a cultura de programação.
+                </p>
+                <p class="abacate-small">Texto pequeno para detalhes e observações.</p>
+            </div>
+        </section>
+
+        <!-- Formulário Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Formulários</h2>
+            <div class="abacate-card">
+                <form class="abacate-grid" style="max-width: 400px;">
+                    <input type="text" class="abacate-input" placeholder="Seu nome">
+                    <input type="email" class="abacate-input" placeholder="seu@email.com">
+                    <textarea class="abacate-input" rows="4" placeholder="Sua mensagem..."></textarea>
+                    <button type="submit" class="btn-abacate">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Cores Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Paleta de Cores</h2>
+            <div class="abacate-grid abacate-grid--2">
+                <div class="abacate-card">
+                    <h3 class="abacate-h3">Modo Claro</h3>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                        <div style="background: #c9ffc9; padding: 1rem; border-radius: 4px; text-align: center; color: #011B10; font-weight: 500;">
+                            Light<br><small>#c9ffc9</small>
+                        </div>
+                        <div style="background: #011B10; padding: 1rem; border-radius: 4px; text-align: center; color: #c9ffc9; font-weight: 500;">
+                            Dark<br><small>#011B10</small>
+                        </div>
+                        <div style="background: #1ad527; padding: 1rem; border-radius: 4px; text-align: center; color: #c9ffc9; font-weight: 500;">
+                            Accent<br><small>#1ad527</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="abacate-card">
+                    <h3 class="abacate-h3">Modo Escuro</h3>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                        <div style="background: #111111; padding: 1rem; border-radius: 4px; text-align: center; color: #d0d0d0; font-weight: 500;">
+                            Background<br><small>#111111</small>
+                        </div>
+                        <div style="background: #d0d0d0; padding: 1rem; border-radius: 4px; text-align: center; color: #111111; font-weight: 500;">
+                            Text<br><small>#d0d0d0</small>
+                        </div>
+                        <div style="background: #39FF14; padding: 1rem; border-radius: 4px; text-align: center; color: #111111; font-weight: 500;">
+                            Neon<br><small>#39FF14</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animações Demo -->
+        <section class="abacate-p-lg">
+            <h2 class="abacate-h2">Animações</h2>
+            <div class="abacate-flex" style="gap: 2rem; flex-wrap: wrap; align-items: center;">
+                <div class="abacate-card abacate-fade-in">
+                    <h3 class="abacate-h3">Fade In</h3>
+                    <p class="abacate-body">Animação suave de entrada</p>
+                </div>
+                
+                <div class="abacate-card abacate-pulse">
+                    <h3 class="abacate-h3">Pulse</h3>
+                    <p class="abacate-body">Destaque pulsante</p>
+                </div>
+                
+                <div class="abacate-card abacate-glow">
+                    <h3 class="abacate-h3">Glow</h3>
+                    <p class="abacate-body">Brilho intermitente</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="abacate-p-lg" style="text-align: center; border-top: 1px solid var(--abacate-accent); margin-top: 3rem;">
+            <p class="abacate-body">
+                🥑 <strong>Abacate Hacker Style Guide</strong> - 
+                Criado com 💚 por <a href="https://github.com/pachicodes" class="abacate-link">@pachicodes</a>
+            </p>
+            <p class="abacate-small">
+                #devrel #comunidades #designsystem #abacatehacker
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Implementação do Dark Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const body = document.body;
+
+        // Carregar tema salvo ou usar preferência do sistema
+        const savedTheme = localStorage.getItem('abacate-theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        body.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        // Toggle functionality
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('abacate-theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            toggleIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+
+        // Detectar mudanças na preferência do sistema
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('abacate-theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                body.setAttribute('data-theme', newTheme);
+                updateIcon(newTheme);
+            }
+        });
+
+        // Adicionar animação de fade-in nos elementos quando entram na viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('abacate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os cards
+        document.querySelectorAll('.abacate-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
