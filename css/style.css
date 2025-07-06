@@ -2,6 +2,89 @@
     --light: #c9ffc9;
     --dark: #011B10;
     --accent: #1ad527;
+    --pico-border-radius: 0;
+    --neon-green: #39FF14; /* Verde Neon (usado no dark mode) */
+    --light-gray: #F0F0F0; /* Cinza Claro */
+    --dark-gray: #404040;  /* Cinza Escuro (para cards no modo escuro) */
+    --near-black: #1f1f1f; /* Quase Preto (para texto no modo claro) */
+    --near-white: #d0d0d0; /* Quase Branco (para texto no modo escuro) */
+    --black: #111111;      /* Preto */
+}
+
+/* Header styles */
+.header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--accent);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Dark mode styles */
+body[data-theme="dark"] {
+    background-color: var(--black);
+    color: var(--near-white);
+}
+
+body[data-theme="dark"] .theme-toggle {
+    background-color: var(--dark-gray);
+    border-color: var(--neon-green);
+    color: var(--near-white);
+}
+
+body[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--neon-green);
+    color: var(--black);
+}
+
+body[data-theme="dark"] strong {
+    background-color: var(--neon-green);
+    color: var(--black);
+}
+
+body[data-theme="dark"] a {
+    color: var(--neon-green);
+}
+
+body[data-theme="dark"] a:hover {
+    background-color: var(--neon-green);
+    color: var(--black);
+}
+
+body[data-theme="dark"] .social-icon {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+body[data-theme="dark"] .social-icon:hover {
+    filter: brightness(0) invert(1);
+    opacity: 1;
 }
 
 body {
@@ -12,10 +95,12 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Roboto Mono', monospace;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 strong {
-    background-color: var(--accent)
+    background-color: var(--accent);
+    transition: all 0.3s ease;
 }
 .container {
     max-width: 1200px;
@@ -67,11 +152,13 @@ nav {
 .social-icon {
     width:50px;
     color:var(--dark);
+    transition: all 0.3s ease;
 }
 
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {

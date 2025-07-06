@@ -21,6 +21,11 @@
 
   <body>
     <div class="container">
+      <header class="header">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+      </header>
       <main class="hero">
         <section class="hero__intro">
         <h1 class="hero__title">
@@ -100,5 +105,31 @@
         </ul>
         <a href="mailto:pachicodes@gmail.com">pachicodes@gmail.com</a>
     </main>
+    </div>
+    
+    <script>
+      // Dark mode toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.querySelector('.theme-toggle-icon');
+      const body = document.body;
+
+      // Check for saved theme preference or default to light mode
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+      updateIcon(savedTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+      });
+
+      function updateIcon(theme) {
+        themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+      }
+    </script>
   </body>
 </html>
